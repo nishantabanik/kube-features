@@ -1,0 +1,36 @@
+argo-cd:
+  dex:
+    enabled: false
+  global:
+    domain: 'localhost'
+  installCRDs: true
+  notifications:
+    enabled: false
+
+  configs:
+    cm:
+      timeout.reconciliation: '15s'
+
+  server:
+    config:
+      repositories: |
+        - type: git
+          name: github
+          url: https://github.com/nishantabanik/kube-features.git
+
+defaults:
+  repository: https://github.com/nishantabanik/kube-features.git
+  revision: main
+
+# Only define local cluster and a sample project/app for demo
+clusters:
+  local:
+    cluster_url: https://kubernetes.default.svc
+    sync: enable
+    projects:
+      default:
+        description: Default ArgoCD Project
+        apps:
+          - name: sample-app
+            namespace: sample-app
+            path: infrastructure/sample-app

@@ -1,0 +1,17 @@
+replicaCount: 1
+
+image:
+  repository: nginx
+  tag: '1.21'
+
+service:
+  type: ClusterIP
+  port: 80
+
+env:
+  - name: ENVIRONMENT
+    value: 'kube-dev-standard'
+  - name: CLUSTER
+    value: 'kube-standard-cluster'
+
+namespace: kube-dev
