@@ -20,7 +20,7 @@ argo-cd:
 
 defaults:
   repository: https://github.com/nishantabanik/kube-features.git
-  revision: argo-branch
+  revision: main
 
 # Only define local cluster and a sample project/app for demo
 clusters:
