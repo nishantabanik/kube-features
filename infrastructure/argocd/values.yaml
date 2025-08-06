@@ -22,7 +22,7 @@ defaults:
   repository: https://github.com/nishantabanik/kube-features.git
   revision: main
 
-# Only define local cluster and a sample project/app for demo
+# Only define local cluster and a sample project/app for demo1
 clusters:
   local:
     cluster_url: https://kubernetes.default.svc
